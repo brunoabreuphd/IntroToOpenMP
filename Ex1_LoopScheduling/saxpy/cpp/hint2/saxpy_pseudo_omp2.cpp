@@ -66,6 +66,7 @@ int main()
     cout << "Elapsed time (s): " << elapsedT.tv_sec + elapsedT.tv_usec / 1000000.0 << endl;
 
     // !! check your results here !!
+    // !! pick a few random elements from y and verify they are different than one !!
 
     // goodbye
     return 0;
