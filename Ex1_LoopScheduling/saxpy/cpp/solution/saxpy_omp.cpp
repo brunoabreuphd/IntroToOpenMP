@@ -59,9 +59,9 @@ int main()
 
     // perform SAXPY
     gettimeofday(&startT, NULL); // trigger stopwatch
-#pragma omp parallel
+    #pragma omp parallel
     {
-#pragma omp for schedule(dynamic)
+        #pragma omp for schedule(dynamic)
         for (int i = 0; i < x.size(); i++)
         {
             y[i] = a * x[i] + y[i];
