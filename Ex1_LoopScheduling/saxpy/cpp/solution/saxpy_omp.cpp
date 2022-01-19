@@ -26,7 +26,7 @@
 /****
  ***    This is the solution to the SAXPY exercise.
  ***    I recommend you do not read this file any further
- ***    unless you are sure you checked all the hinds and
+ ***    unless you are sure you checked all the hints and
  ***    tried your best to code it yourself.
  ****/
 
