@@ -31,8 +31,6 @@
 
 using namespace std;
 
-void saxpy(float a, const vector<float> &x, vector<float> &y);
-
 int main()
 {
     // instantiate vectors and attribute values
