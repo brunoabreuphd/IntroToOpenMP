@@ -1,3 +1,3 @@
 # Intro to OpenMP Workshop - Exercises
 
-These are exercises...
+These are exercises... yeah
