@@ -53,12 +53,11 @@ int main()
     // perform SAXPY
     gettimeofday(&startT, NULL); // trigger stopwatch
     // !! open omp parallel region here !!
-    // !! open omp for bracket here !!
+    // !! open omp for directive here !!
     for (int i = 0; i < x.size(); i++)
     {
         y[i] = a * x[i] + y[i];
     }
-    // !! close omp for bracket !!
     // !! close omp parallel region !!
     gettimeofday(&stopT, NULL); // trigger stopwatch
 
