@@ -2,7 +2,7 @@
 FC=gfortran
 
 # Compilation flags
-FFLAGS=-Wall
+FFLAGS=
 
 saxpy_serial.exe: saxpy_serial.o
 	$(FC) -o $@ $^

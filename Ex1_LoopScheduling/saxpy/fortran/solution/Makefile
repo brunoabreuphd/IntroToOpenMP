@@ -2,7 +2,7 @@
 FC=gfortran
 
 # Compilation flags
-FFLAGS=-Wall -fopenmp
+FFLAGS=-fopenmp
 
 saxpy_omp.exe: saxpy_omp.o
 	$(FC) ${FFLAGS} -o $@ $^
