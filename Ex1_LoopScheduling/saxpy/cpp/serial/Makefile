@@ -2,7 +2,7 @@
 CC=g++
 
 # Compilation flags
-CFLAGS=-Wall
+CFLAGS=
 
 saxpy_serial.exe: saxpy_serial.o
 	$(CC) -o $@ $^

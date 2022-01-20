@@ -2,7 +2,7 @@
 CC=g++
 
 # Compilation flags
-CFLAGS=-Wall -fopenmp
+CFLAGS=-fopenmp
 
 saxpy_omp.exe: saxpy_omp.o
 	$(CC) ${CFLAGS} -o $@ $^
