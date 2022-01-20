@@ -1,5 +1,5 @@
 # Fortran Compiler (GNU)
-FC=/opt/homebrew/bin/gfortran-11
+FC=gfortran
 
 # Compilation flags
 FFLAGS=-Wall -fopenmp
