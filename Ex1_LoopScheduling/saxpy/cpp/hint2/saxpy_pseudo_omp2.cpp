@@ -5,7 +5,7 @@
 * National Center for Supercomputing Applications (NCSA)
 *  
 * Creation Date: Wednesday, 19th January 2022, 9:30:42 am
-* Last Modified: Wednesday, 19th January 2022, 9:30:47 am
+* Last Modified: Thursday, 20th January 2022, 10:11:48 am
 *  
 * Copyright (c) 2022, Bruno R. de Abreu, National Center for Supercomputing Applications.
 * All rights reserved.
@@ -52,6 +52,7 @@ int main()
 
     // perform SAXPY
     gettimeofday(&startT, NULL); // trigger stopwatch
+    // !! substitute the above sys/time call for an OpenMP library function
     // !! open omp parallel region here !!
     // !! open omp for directive here !! choose loop scheduling here !!
     for (int i = 0; i < x.size(); i++)
@@ -60,6 +61,7 @@ int main()
     }
     // !! close omp parallel region !!
     gettimeofday(&stopT, NULL); // trigger stopwatch
+    // !! substitute the above sys/time call for an OpenMP library function
 
     // print time
     timersub(&stopT, &startT, &elapsedT);
