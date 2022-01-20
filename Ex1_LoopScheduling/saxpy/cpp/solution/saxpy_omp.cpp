@@ -5,7 +5,7 @@
 * National Center for Supercomputing Applications (NCSA)
 *  
 * Creation Date: Wednesday, 19th January 2022, 9:33:43 am
-* Last Modified: Wednesday, 19th January 2022, 9:35:17 am
+* Last Modified: Thursday, 20th January 2022, 9:46:51 am
 *  
 * Copyright (c) 2022, Bruno R. de Abreu, National Center for Supercomputing Applications.
 * All rights reserved.
@@ -32,7 +32,6 @@
 
 #include <iostream>
 #include <vector>
-#include <sys/time.h>
 #include "omp.h"
 
 #define ORD 1 << 27 // size of array
@@ -55,23 +54,22 @@ int main()
     float a = 2.0; // scalar multiplier (y -> a*x + y)
 
     // stopwatch to measure time
-    struct timeval startT, stopT, elapsedT;
+    double startT, stopT;
 
     // perform SAXPY
-    gettimeofday(&startT, NULL); // trigger stopwatch
-    #pragma omp parallel
+    startT = omp_get_wtime(); // trigger stopwatch
+#pragma omp parallel
     {
-        #pragma omp for schedule(dynamic)
+#pragma omp for schedule(dynamic)
         for (int i = 0; i < x.size(); i++)
         {
             y[i] = a * x[i] + y[i];
         }
     }
-    gettimeofday(&stopT, NULL); // trigger stopwatch
+    stopT = omp_get_wtime(); // trigger stopwatch
 
     // print time
-    timersub(&stopT, &startT, &elapsedT);
-    cout << "Elapsed time (s): " << elapsedT.tv_sec + elapsedT.tv_usec / 1000000.0 << endl;
+    cout << "Elapsed time (s): " << (stopT - startT) << endl;
 
     // check result
     cout << "\nSamples of y: " << endl;
