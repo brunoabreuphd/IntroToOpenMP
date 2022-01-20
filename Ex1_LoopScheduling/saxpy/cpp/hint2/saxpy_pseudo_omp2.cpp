@@ -5,7 +5,7 @@
 * National Center for Supercomputing Applications (NCSA)
 *  
 * Creation Date: Wednesday, 19th January 2022, 9:30:42 am
-* Last Modified: Thursday, 20th January 2022, 10:11:48 am
+* Last Modified: Thursday, 20th January 2022, 10:20:29 am
 *  
 * Copyright (c) 2022, Bruno R. de Abreu, National Center for Supercomputing Applications.
 * All rights reserved.
@@ -64,6 +64,7 @@ int main()
     // !! substitute the above sys/time call for an OpenMP library function
 
     // print time
+    // !! adjust your output if you are now using the OpenMP library to measure time
     timersub(&stopT, &startT, &elapsedT);
     cout << "Elapsed time (s): " << elapsedT.tv_sec + elapsedT.tv_usec / 1000000.0 << endl;
 
