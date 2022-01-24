@@ -63,9 +63,7 @@ int main()
     r2 = rand() % int(ORD);
     r3 = rand() % int(ORD);
     r4 = rand() % int(ORD);
-    cout << "i\t"
-         << "j\t"
-         << "M[i][j]" << endl;
+    cout << "i\t" << "j\t" << "M[i][j]" << endl;
     cout << r1 << "\t" << r2 << "\t" << M[r1][r2] << endl;
     cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
     // print this specific element
@@ -74,9 +72,9 @@ int main()
 
     // now perform some funky matrix shuffling
     startT = omp_get_wtime(); // trigger stopwatch
-#pragma omp parallel
+    #pragma omp parallel
     {
-#pragma omp for private(j, shuff_i, shuff_j) schedule(dynamic)
+        #pragma omp for private(j, shuff_i, shuff_j) schedule(dynamic)
         for (i = 0; i < ORD; i++)
         {
             for (j = 0; j < ORD; j++)
