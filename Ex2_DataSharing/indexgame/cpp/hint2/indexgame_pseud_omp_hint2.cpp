@@ -71,6 +71,7 @@ int main()
     // now perform some funky matrix shuffling
     // !! HINT1 trigger stopwatch
     // !! HINT1 start the parallel region here !!
+    // !! HINT2 declare explicitly which variables are shared in this region
     // !! HINT1 start the omp loop here -- you can now include the scheduling choice !!
     // !! HINT2 declare explicitly which variables are private in this loop
     for (i = 0; i < ORD; i++)

@@ -80,9 +80,9 @@ int main()
 
     // now perform some funky matrix shuffling
     startT = omp_get_wtime(); // trigger stopwatch
-#pragma omp parallel
+#pragma omp parallel shared(M, B)
     {
-#pragma omp for private(j, shuff_i, shuff_j) schedule(dynamic)
+#pragma omp for private(i, j, shuff_i, shuff_j) schedule(dynamic)
         for (i = 0; i < ORD; i++)
         {
             for (j = 0; j < ORD; j++)
