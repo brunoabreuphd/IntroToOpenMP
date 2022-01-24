@@ -26,7 +26,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-// !! HINT include the OpenMP header here !!
+// !! HINT1 include the OpenMP header here !!
 
 #define ORD 1 << 15          // size of array
 #define PI -4.0 * atan(-1.0) // pi ;D
@@ -43,7 +43,7 @@ int main()
     int i, j;                 // these will run over M
     int shuff_i, shuff_j;     // these will be the shuffled index
     int r1, r2, r3, r4;       // these will help us check resutls
-    // !! HINT add a couple of doubles to measure execution time !!
+    // !! HINT1 add a couple of doubles to measure execution time !!
 
     // instantiate M with random numbers
     for (i = 0; i < ORD; i++)
@@ -69,9 +69,9 @@ int main()
     cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
 
     // now perform some funky matrix shuffling
-    // !! HINT trigger stopwatch
-    // !! HINT start the parallel region here !!
-    // !! HINT start the omp loop here -- you can now include the scheduling choice !!
+    // !! HINT1 trigger stopwatch
+    // !! HINT1 start the parallel region here !!
+    // !! HINT1 start the omp loop here -- you can now include the scheduling choice !!
     for (i = 0; i < ORD; i++)
     {
         for (j = 0; j < ORD; j++)
@@ -81,17 +81,17 @@ int main()
             M[i][j] = M[shuff_i][shuff_j];
         }
     }
-    // !! HINT don't forget to close your OMP directives here
-    // !! HINT trigger stopwatch
+    // !! HINT1 don't forget to close your OMP directives here
+    // !! HINT1 trigger stopwatch
 
-    // !! HINT print out the execution time here !!
+    // !! HINT1 print out the execution time here !!
 
     // print output
     cout << "\nThe same elements of M after shuffling: " << endl;
     cout << r1 << "\t" << r2 << "\t" << M[r1][r2] << endl;
     cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
 
-    // !! HINT check results here !!
+    // !! HINT1 check results here !!
 
     // goodbye
     return 0;
