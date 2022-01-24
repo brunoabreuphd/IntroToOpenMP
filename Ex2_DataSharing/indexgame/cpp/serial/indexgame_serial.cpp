@@ -71,8 +71,8 @@ int main()
     {
         for (j = 0; j < ORD; j++)
         {
-            shuff_i = int((float(ORD) / 2.0) * abs((cos(PI * float(i / j)) + sin(PI * float(j / i)))));
-            shuff_j = int((float(ORD) / 2.0) * abs((cos(PI * float(j / i)) + sin(PI * float(i / j)))));
+            shuff_i = (float(ORD) / 2.0) * abs((cos(PI * float(i) / float(j)) + sin(PI * float(j) / float(i)))) - 1;
+            shuff_j = (float(ORD) / 2.0) * abs((cos(PI * float(j) / float(i)) + sin(PI * float(i) / float(j)))) - 1;
             M[i][j] = M[shuff_i][shuff_j];
         }
     }
