@@ -36,16 +36,21 @@ using namespace std;
 int main()
 {
     // variables
-    vector<vector<double>> M; // matrix
-    vector<double> v;         // vector
-    float r;                  // this will hold random numbers
-    srand(time(NULL));        // choose random seed for random number generator
-    int i, j;                 // these will run over M
-    int shuff_i, shuff_j;     // these will be the shuffled index
-    int r1, r2, r3, r4;       // these will help us check resutls
-    double startT, stopT;     // measure execution time
-    double c1, c2;            // compare results
+    vector<vector<double>> M, B; // matrices
+    vector<double> v, zeros;     // vectors
+    float r;                     // this will hold random numbers
+    srand(time(NULL));           // choose random seed for random number generator
+    int i, j;                    // these will run over M
+    int shuff_i, shuff_j;        // these will be the shuffled index
+    int r1, r2, r3, r4;          // these will help us check resutls
+    double startT, stopT;        // measure execution time
+    double c1, c2;               // compare results
 
+    // instantiate zeros with zeros
+    for (i = 0; i < ORD; i++)
+    {
+        zeros.push_back(0.0);
+    }
     // instantiate M with random numbers
     for (i = 0; i < ORD; i++)
     {
@@ -54,8 +59,9 @@ int main()
             r = float(rand() % RAND_MAX); // get a random integer
             v.push_back(r);               // push it to vector
         }
-        M.push_back(v); // push it to matrx
-        v.clear();      // clear vector
+        M.push_back(v); // push it to matrix
+        B.push_back(zeros);
+        v.clear(); // clear vector
     }
     // print a couple of elements
     cout << "Some elements of M before shuffling: " << endl;
@@ -63,7 +69,9 @@ int main()
     r2 = rand() % int(ORD);
     r3 = rand() % int(ORD);
     r4 = rand() % int(ORD);
-    cout << "i\t" << "j\t" << "M[i][j]" << endl;
+    cout << "i\t"
+         << "j\t"
+         << "M[i][j]" << endl;
     cout << r1 << "\t" << r2 << "\t" << M[r1][r2] << endl;
     cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
     // print this specific element
@@ -72,16 +80,16 @@ int main()
 
     // now perform some funky matrix shuffling
     startT = omp_get_wtime(); // trigger stopwatch
-    #pragma omp parallel
+#pragma omp parallel
     {
-        #pragma omp for private(j, shuff_i, shuff_j) schedule(dynamic)
+#pragma omp for private(j, shuff_i, shuff_j) schedule(dynamic)
         for (i = 0; i < ORD; i++)
         {
             for (j = 0; j < ORD; j++)
             {
                 shuff_i = ((float(ORD) / 2.0) * abs((cos(PI * float(i) / float(j)) + sin(PI * float(j) / float(i))))) - 1;
                 shuff_j = ((float(ORD) / 2.0) * abs((cos(PI * float(j) / float(i)) + sin(PI * float(i) / float(j))))) - 1;
-                M[i][j] = M[shuff_i][shuff_j];
+                B[i][j] = M[shuff_i][shuff_j];
             }
         }
     }
@@ -90,12 +98,12 @@ int main()
 
     // print output
     cout << "\nThe same elements of M after shuffling: " << endl;
-    cout << r1 << "\t" << r2 << "\t" << M[r1][r2] << endl;
-    cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
+    cout << r1 << "\t" << r2 << "\t" << B[r1][r2] << endl;
+    cout << r3 << "\t" << r4 << "\t" << B[r3][r4] << endl;
 
     // compare results: is c1 = c2?
-    c2 = M[100][1000];
-    cout << "M[100][1000] = " << c2 << endl;
+    c2 = B[100][1000];
+    cout << "B[100][1000] = " << c2 << endl;
 
     // goodbye
     return 0;
