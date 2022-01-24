@@ -8,6 +8,7 @@
   "javascript.suggest.includeAutomaticOptionalChainCompletions": false,
   "debug.saveBeforeStart": "none",
   "files.associations": {
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "iostream": "cpp"
   }
 }
