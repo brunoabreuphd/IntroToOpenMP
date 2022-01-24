@@ -60,9 +60,7 @@ int main()
     r2 = rand() % int(ORD);
     r3 = rand() % int(ORD);
     r4 = rand() % int(ORD);
-    cout << "i\t"
-         << "j\t"
-         << "M[i][j]" << endl;
+    cout << "i\t" << "j\t" << "M[i][j]" << endl;
     cout << r1 << "\t" << r2 << "\t" << M[r1][r2] << endl;
     cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
 
