@@ -5,7 +5,7 @@
 !! National Center for Supercomputing Applications (NCSA)
 !!  
 !! Creation Date: Tuesday, 25th January 2022, 10:04:04 am
-!! Last Modified: Tuesday, 25th January 2022, 10:23:49 am
+!! Last Modified: Tuesday, 25th January 2022, 10:35:04 am
 !!  
 !! Copyright (c) 2022, Bruno R. de Abreu, National Center for Supercomputing Applications.
 !! All rights reserved.
@@ -23,7 +23,7 @@
 !!          the software and its usage.
 !!!!
 
-program indexgame_serial
+program indexgame_omp
     use, intrinsic :: iso_fortran_env
     use :: omp_lib
     implicit none
@@ -101,4 +101,4 @@ program indexgame_serial
     deallocate(M)    
     deallocate(B)                    
 
-end program indexgame_serial
+end program indexgame_omp
