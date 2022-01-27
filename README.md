@@ -22,6 +22,26 @@ If you are working on this from a remote server, I recommend cloning the entire 
 The workspace has a **Makefile** that takes the source code, which is named *ExerciseName_yourwork.<cpp/f90>* and compiles it into an executable *ExerciseName_yourwork.exe* (you will also get an object file that can be ignored). This Makefile already includes the OpenMP flags for GCC.
   
 
-## Exercise 1 - Data Sharing 
+## Exercise 1 - Loop Scheduling
+By default, when parallelize a loop without specifying the **schedule** directive, OpenMP splits the iterations evenly over the entire team of threads. This is normally efficient, since in a lot of cases the workload of each iteration is identical. However, if you know that your loop has different workloads for different iterations, other scheduling options can perform much better, since the execution time will be dominated by the thread that finishes execution last.
+The general rule here is: don't speculate too much, test it!
+
+### saxpy
+This simple code implements a common operation: **S**ingle-precision **A** x **X** **p**lus **Y**. Depending on the size of the array, different scheduling options can heve different performance as a consequence of having to access different memory addresses.
 
 
+## Exercise 2 - Data Sharing
+Data concurrency (or racing) and data dependency are common problems when parallelizing serial applications that make your parallelized code run different than the serial version, giving different results-- even worse, these results can change from execution to execution and, sometimes, give the right results!
+The good practice here is always being explicit about each variables are shared between threads and which ones should be private, where each thread has its own copy to work on.
+
+### indexgame
+This simple code takes a matrix filled with random numbers and shuffles the entries in a determiniscic way, which allows you to check the consistency of your results. The transformation of indexes that is currently implemented is highly (and obviously) non-linear:
+
+![image](https://user-images.githubusercontent.com/84105092/151406631-3784c39e-76bd-46d9-90cc-8d04d3df102c.png)
+
+
+## Exercise 3 - Reduction Clauses
+It is often the case where we want to gather the private results from the work on each thread into a single variable that is passed out of the parallel region. For that purpose, reduction clauses are extremely handy and highly flexible.
+
+### dotprod
+This implements a simple dot product between two vectors to illustrate the use of an addition-reduction clause that, without this construct, would be a little tedious to implement.
