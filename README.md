@@ -35,7 +35,7 @@ Data concurrency (or racing) and data dependency are common problems when parall
 The good practice here is always being explicit about each variables are shared between threads and which ones should be private, where each thread has its own copy to work on.
 
 ### [indexgame](./Ex2_DataSharing/indexgame)
-This simple code takes a matrix filled with random numbers and shuffles the entries in a determiniscic way, which allows you to check the consistency of your results. The transformation of indexes that is currently implemented is highly (and obviously) non-linear:
+This simple code takes a matrix filled with random numbers and shuffles the entries in a deterministic way, which allows you to check the consistency of your results. The transformation of indexes that is currently implemented is highly (and obviously) non-linear:
 
 ![image](https://user-images.githubusercontent.com/84105092/151406631-3784c39e-76bd-46d9-90cc-8d04d3df102c.png)
 
