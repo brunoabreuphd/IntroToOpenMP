@@ -47,7 +47,7 @@ int main()
     int r1, r2, r3, r4;   // these will help us check resutls
     // !! HINT1 add a couple of doubles to measure execution time !!
 
-    // !! HINT3 push a set of zeros to the vector
+    // !! HINT3 push a set of zeros to the vector !!
     // instantiate M with random numbers
     for (i = 0; i < ORD; i++)
     {
@@ -58,7 +58,7 @@ int main()
         }
         M.push_back(v); // push it to matrx
         v.clear();      // clear vector
-        // !! HINT3 push zeros to the helper matrix
+        // !! HINT3 push zeros to the helper matrix !! 
     }
     // print a couple of elements
     cout << "Some elements of M before shuffling: " << endl;
@@ -71,10 +71,10 @@ int main()
     cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
 
     // now perform some funky matrix shuffling
-    // !! HINT1 trigger stopwatch
-    // !! HINT1 start the parallel region here !!
+    // !! HINT1 trigger stopwatch !!
+    // !! HINT1 start the parallel region here !! 
     // !! HINT1 start the omp loop here -- you can now include the scheduling choice !!
-    // !! HINT2 declare explicitly which variables are private in this loop
+    // !! HINT2 declare explicitly which variables are private in this loop !!
     for (i = 0; i < ORD; i++)
     {
         for (j = 0; j < ORD; j++)
@@ -82,22 +82,22 @@ int main()
             shuff_i = (float(ORD) / 2.0) * abs((cos(PI * float(i) / float(j)) + sin(PI * float(j) / float(i)))) - 1;
             shuff_j = (float(ORD) / 2.0) * abs((cos(PI * float(j) / float(i)) + sin(PI * float(i) / float(j)))) - 1;
             M[i][j] = M[shuff_i][shuff_j];
-            // !! HINT3 instead of copying it to M itself, copy it to the helper matrix
+            // !! HINT3 instead of copying it to M itself, copy it to the helper matrix !!
         }
     }
-    // !! HINT1 don't forget to close your OMP directives here
-    // !! HINT1 trigger stopwatch
+    // !! HINT1 don't forget to close your OMP directives here !!
+    // !! HINT1 trigger stopwatch !!
 
     // !! HINT1 print out the execution time here !!
 
     // print output
-    // !! HINT3 remember to print the helper elements, not M's
+    // !! HINT3 remember to print the helper elements, not M's !!
     cout << "\nThe same elements of M after shuffling: " << endl;
     cout << r1 << "\t" << r2 << "\t" << M[r1][r2] << endl;
     cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
 
     // !! HINT1 check results here !!
-    // !! HINT2 Choose a couple of values i and j, perform the transformation into shuff_i and shuff_j by hand, and check to see it it matches
+    // !! HINT2 Choose a couple of values i and j, perform the transformation into shuff_i and shuff_j by hand, and check to see it it matches !!
 
     // goodbye
     return 0;
