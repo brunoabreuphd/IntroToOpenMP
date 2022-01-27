@@ -25,7 +25,6 @@
 
 #include <iostream>
 #include <vector>
-#include <sys/time.h>
 
 #define ORD 1 << 27 // size of array
 
