@@ -45,3 +45,6 @@ It is often the case where we want to gather the private results from the work o
 
 ### [dotprod](./Ex3_Reductions/dotprod)
 This implements a simple dot product between two vectors to illustrate the use of an addition-reduction clause that, without this construct, would be a little tedious to implement.
+
+## Comments and Hints syntax
+Comments that are sprinkled over the code files start with **//** for C++ and **!** for Fortran. Hints start with a **// !! HINT#** and finish with **!!** for C++, start with **! ## HINT#** and finish with **##** for Fortran. 
