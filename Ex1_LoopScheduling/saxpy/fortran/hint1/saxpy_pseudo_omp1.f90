@@ -23,7 +23,7 @@
 !!          the software and its usage.
 !!!!
 
-program saxpy_omp
+program saxpy_hints
     use, intrinsic :: iso_fortran_env
     ! ## HINT1 include the OpenMP module here ##
     implicit none
@@ -63,4 +63,4 @@ program saxpy_omp
     ! clean up
     deallocate(x,y)
 
-end program saxpy_omp
+end program saxpy_hints
