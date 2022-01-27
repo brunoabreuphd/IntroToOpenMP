@@ -67,11 +67,11 @@ int main()
     cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
 
     // now perform some funky matrix shuffling
-    // !! HINT1 trigger stopwatch
+    // !! HINT1 trigger stopwatch !!
     // !! HINT1 start the parallel region here !!
-    // !! HINT2 declare explicitly which variables are shared in this region
+    // !! HINT2 declare explicitly which variables are shared in this region !!
     // !! HINT1 start the omp loop here -- you can now include the scheduling choice !!
-    // !! HINT2 declare explicitly which variables are private in this loop
+    // !! HINT2 declare explicitly which variables are private in this loop !!
     for (i = 0; i < ORD; i++)
     {
         for (j = 0; j < ORD; j++)
@@ -81,8 +81,8 @@ int main()
             M[i][j] = M[shuff_i][shuff_j];
         }
     }
-    // !! HINT1 don't forget to close your OMP directives here
-    // !! HINT1 trigger stopwatch
+    // !! HINT1 don't forget to close your OMP directives here !!
+    // !! HINT1 trigger stopwatch !!
 
     // !! HINT1 print out the execution time here !!
 
@@ -92,7 +92,7 @@ int main()
     cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
 
     // !! HINT1 check results here !!
-    // !! HINT2 Choose a couple of values i and j, perform the transformation into shuff_i and shuff_j by hand, and check to see it it matches
+    // !! HINT2 Choose a couple of values i and j, perform the transformation into shuff_i and shuff_j by hand, and check to see it it matches !!
 
     // goodbye
     return 0;
