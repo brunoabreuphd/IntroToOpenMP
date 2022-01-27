@@ -25,8 +25,7 @@
 
 #include <iostream>
 #include <vector>
-#include <sys/time.h>
-// !! include the OpenMP library  !!
+// !! HINT1 include the OpenMP library  !!
 
 #define ORD 1 << 27 // size of array
 
@@ -46,30 +45,25 @@ int main()
         y.push_back(1.0);              // y is just ones
     }
     float a = 2.0; // scalar multiplier (y -> a*x + y)
+    // !! HINT1 add a couple of doubles to track execution time !!
 
-    // stopwatch to measure time
-    struct timeval startT, stopT, elapsedT;
 
     // perform SAXPY
-    gettimeofday(&startT, NULL); // trigger stopwatch
-    // !! substitute the above sys/time call for an OpenMP library function
-    // !! open omp parallel region here !!
-    // !! open omp for directive here !! choose loop scheduling here !!
+    // !! HINT1 trigger stopwatch !!
+    // !! HINT1 open omp parallel region here !!
+    // !! HINT1 open omp for directive here !! 
+    // !! HINT2 choose loop scheduling along with the loop directive !!
     for (int i = 0; i < x.size(); i++)
     {
         y[i] = a * x[i] + y[i];
     }
-    // !! close omp parallel region !!
-    gettimeofday(&stopT, NULL); // trigger stopwatch
-    // !! substitute the above sys/time call for an OpenMP library function
+    // !! HINT1 close omp parallel region !!
+    // !! HINT1 tigger stopwatch
 
-    // print time
-    // !! adjust your output if you are now using the OpenMP library to measure time
-    timersub(&stopT, &startT, &elapsedT);
-    cout << "Elapsed time (s): " << elapsedT.tv_sec + elapsedT.tv_usec / 1000000.0 << endl;
+    // !! HINT1 print execution time here !!
 
-    // !! check your results here !!
-    // !! pick a few random elements from y and verify they are different than one !!
+    // !! HINT1 check your results here !!
+    // !! HINT2 pick a few random elements from y and verify they are different than one !!
 
     // goodbye
     return 0;
