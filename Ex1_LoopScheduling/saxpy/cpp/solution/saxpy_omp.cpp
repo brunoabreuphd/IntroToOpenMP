@@ -24,7 +24,7 @@
 ***/
 
 /****
- ***    This is the solution to the SAXPY exercise.
+ ***    This is a solution to the SAXPY exercise.
  ***    I recommend you do not read this file any further
  ***    unless you are sure you checked all the hints and
  ***    tried your best to code it yourself.
