@@ -26,7 +26,7 @@
 #include <iostream>
 #include <vector>
 #include <sys/time.h>
-// !! include the OpenMP library  !!
+// !! HINT1 include the OpenMP library  !!
 
 #define ORD 1 << 27 // size of array
 
@@ -52,20 +52,20 @@ int main()
 
     // perform SAXPY
     gettimeofday(&startT, NULL); // trigger stopwatch
-    // !! open omp parallel region here !!
-    // !! open omp for directive here !!
+    // !! HINT1 open omp parallel region here !!
+    // !! HINT1 open omp for directive here !!
     for (int i = 0; i < x.size(); i++)
     {
         y[i] = a * x[i] + y[i];
     }
-    // !! close omp parallel region !!
+    // !! HINT1 close omp parallel region !!
     gettimeofday(&stopT, NULL); // trigger stopwatch
 
     // print time
     timersub(&stopT, &startT, &elapsedT);
     cout << "Elapsed time (s): " << elapsedT.tv_sec + elapsedT.tv_usec / 1000000.0 << endl;
 
-    // !! check your results here !!
+    // !! HINT1 check your results here !!
 
     // goodbye
     return 0;
