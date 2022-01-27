@@ -1,5 +1,5 @@
 # C++ Compiler (GNU)
-CC=/opt/homebrew/bin/g++-11
+CC=g++
 
 # Compilation flags
 CFLAGS=
