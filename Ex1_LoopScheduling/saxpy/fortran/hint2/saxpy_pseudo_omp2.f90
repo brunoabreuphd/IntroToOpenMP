@@ -23,17 +23,17 @@
 !!          the software and its usage.
 !!!!
 
-program saxpy_omp
+program saxpy_hints
     use, intrinsic :: iso_fortran_env
-    ! ## include the OpenMP module here ##
+    ! ## HINT1 include the OpenMP module here ##
     implicit none
     integer, parameter :: sp = REAL32   ! single precision
     integer, parameter :: dp = REAL64   ! double precision
     integer, parameter :: ORD = 2**27   ! arrays size
-    real(dp) :: startT, stopT           ! stopwatch
     real(sp), dimension(:), allocatable :: x, y     ! arrays
     real(sp) :: a   ! scalar constant    
     integer :: i    ! integer helper
+    ! ## HINT1 add a couple of reals to track execution time ##
 
     ! allocate memory space
     allocate(x(ORD))
@@ -46,25 +46,23 @@ program saxpy_omp
     a = 2.0_sp              ! a is the scalar y -> a*x + y
 
     ! perform SAXPY
-    call cpu_time(startT)
-    ! ## substitute the above cpu_time call for an OpenMP library function
-    ! ## open omp parallel region here ##
-    ! ## open omp do directive here ## choose loop scheduling here ##
+    ! ## HINT1 trigger stopwatch ##
+    ! ## HINT1 open omp parallel region here ##
+    ! ## HINT1 open omp do directive here ## choose loop scheduling here ##
+    ! ## HINT2 add the scheduling option along with the omp do directive ##
     do i = 1, ORD
         y(i) = a*x(i) + y(i)
     enddo
-    ! ## close omp do directive here ##
-    ! ## close omp parallel region here ##
-    call cpu_time(stopT) 
-    ! ## substitute the above cpu_time call for an OpenMP library function
+    ! ## HINT1 close omp do directive here ##
+    ! ## HINT1 close omp parallel region here ##
+    ! ## HINT1 trigger stopwatch ##
 
-    ! print time
-    write(*,*) 'Elapsed time (s): ', (stopT-startT)
+    ! ## HINT1 print execution time here ##
 
-    ! ## check your results here ##
-    ! ## pick a few random elements from y and verify they are different than one ##
+    ! ## HINT1 check your results here ##
+    ! ## HINT2 pick a few random elements from y and verify they are different than one ##
 
     ! clean up
     deallocate(x,y)
 
-end program saxpy_omp
+end program saxpy_hints
