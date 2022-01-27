@@ -46,20 +46,11 @@ int main()
     }
     float a = 2.0; // scalar multiplier (y -> a*x + y)
 
-    // stopwatch to measure time
-    struct timeval startT, stopT, elapsedT;
-
     // perform SAXPY
-    gettimeofday(&startT, NULL); // trigger stopwatch
     for (int i = 0; i < x.size(); i++)
     {
         y[i] = a * x[i] + y[i];
     }
-    gettimeofday(&stopT, NULL); // trigger stopwatch
-
-    // print time
-    timersub(&stopT, &startT, &elapsedT);
-    cout << "Elapsed time (s): " << elapsedT.tv_sec + elapsedT.tv_usec / 1000000.0 << endl;
 
     // goodbye
     return 0;
