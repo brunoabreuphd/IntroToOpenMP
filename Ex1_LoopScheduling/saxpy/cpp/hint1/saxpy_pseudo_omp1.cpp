@@ -25,7 +25,6 @@
 
 #include <iostream>
 #include <vector>
-#include <sys/time.h>
 // !! HINT1 include the OpenMP library  !!
 
 #define ORD 1 << 27 // size of array
@@ -46,12 +45,11 @@ int main()
         y.push_back(1.0);              // y is just ones
     }
     float a = 2.0; // scalar multiplier (y -> a*x + y)
+    // !! HINT1 add a couple of doubles to track execution time !!
 
-    // stopwatch to measure time
-    struct timeval startT, stopT, elapsedT;
 
     // perform SAXPY
-    gettimeofday(&startT, NULL); // trigger stopwatch
+    // !! HINT1 trigger stopwatch !!
     // !! HINT1 open omp parallel region here !!
     // !! HINT1 open omp for directive here !!
     for (int i = 0; i < x.size(); i++)
@@ -59,11 +57,9 @@ int main()
         y[i] = a * x[i] + y[i];
     }
     // !! HINT1 close omp parallel region !!
-    gettimeofday(&stopT, NULL); // trigger stopwatch
+    // !! HINT1 trigger stopwatch !!
 
-    // print time
-    timersub(&stopT, &startT, &elapsedT);
-    cout << "Elapsed time (s): " << elapsedT.tv_sec + elapsedT.tv_usec / 1000000.0 << endl;
+    // !! HINT1 print time here !!
 
     // !! HINT1 check your results here !!
 
