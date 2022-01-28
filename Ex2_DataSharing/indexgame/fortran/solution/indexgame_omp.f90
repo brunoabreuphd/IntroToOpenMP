@@ -23,6 +23,14 @@
 !!          the software and its usage.
 !!!!
 
+!!!!
+!!    This is a solution to the IndexGame exercise.
+!!    I recommend you do not read this file any further
+!!    unless you are sure you checked all the hints and
+!!    tried your best to code it yourself.
+!!!!
+
+
 program indexgame_omp
     use, intrinsic :: iso_fortran_env
     use :: omp_lib
