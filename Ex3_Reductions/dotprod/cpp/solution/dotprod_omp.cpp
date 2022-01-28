@@ -61,10 +61,9 @@ int main()
     // calculate dot product
     startT = omp_get_wtime(); // trigger stopwatch
     dotp = 0.0;
-#pragma omp parallel shared(v1, v2)
+    #pragma omp parallel shared(v1, v2)
     {
-#pragma omp for reduction(+ \
-                          : dotp)
+        #pragma omp for reduction(+:dotp)
         for (i = 0; i < ORD; i++)
         {
             dotp = dotp + v1[i] * v2[i];
