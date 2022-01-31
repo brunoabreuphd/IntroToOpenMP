@@ -5,6 +5,14 @@
 This workshop is offered by the [National Center for Supercomputing Applications](https://www.ncsa.illinois.edu/).
 Each exercise is comprised of a serial code (**/serial** folder), the OpenMP-parallelized version of it (**/solution** folder), and pseudo-code with comments/hints on how to parallelize it (**/hint#** folders). Makefiles are available for compilation with GCC. Exercises are implemented in C++ and Fortran, being identical except for the unavoidable syntax differences. In addition, there is always a **/yourwork** folder that you can use to play with the code and try out your directives. In that folder, you will find the base serial code to each exercise as a starting point (the same found in **/serial**).
 
+## Getting an interactive session on Expanse
+During the workshop, you will be editing files, compiling code and, most importantly, **running** things. We don't want to do this in the system's login nodes (the place where you arrive to after loging in through XSEDE's SSO Hub). We want to grab a chunk of a compute node. Copy and paste the following command on your terminal to get 16 cores:
+
+```
+srun --partition=shared --pty --account=nsa108 --nodes=1 --ntasks-per-node=1 --cpus-per-task=16 --mem=30G -t 02:00:00 --wait=0 --export=ALL /bin/bash
+```
+
+
 ## Recommended usage
 The exercises present toy applications that perform a simple task, such as the calculation of a dot product betweeen two vectors. They are intended to be interactive: I really think it is important for you to try to insert your own OpenMP directives, compile and run the code before looking into the hints, and use the solution as your last resource. The way you approach this is totally flexible and you should do what you feel comfortable with. Below is my recommendation:
 
