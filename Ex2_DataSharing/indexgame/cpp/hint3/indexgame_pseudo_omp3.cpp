@@ -75,9 +75,9 @@ int main()
     // !! HINT1 start the parallel region here !! 
     // !! HINT1 start the omp loop here -- you can now include the scheduling choice !!
     // !! HINT2 declare explicitly which variables are private in this loop !!
-    for (i = 0; i < ORD; i++)
+    for (i = 1; i < ORD; i++)
     {
-        for (j = 0; j < ORD; j++)
+        for (j = 1; j < ORD; j++)
         {
             shuff_i = (float(ORD) / 2.0) * abs((cos(PI * float(i) / float(j)) + sin(PI * float(j) / float(i)))) - 1;
             shuff_j = (float(ORD) / 2.0) * abs((cos(PI * float(j) / float(i)) + sin(PI * float(i) / float(j)))) - 1;
