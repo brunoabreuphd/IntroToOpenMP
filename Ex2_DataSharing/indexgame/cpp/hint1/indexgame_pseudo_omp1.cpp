@@ -46,9 +46,9 @@ int main()
     // !! HINT1 add a couple of doubles to measure execution time !!
 
     // instantiate M with random numbers
-    for (i = 0; i < ORD; i++)
+    for (i = 1; i < ORD; i++)
     {
-        for (j = 0; j < ORD; j++)
+        for (j = 1; j < ORD; j++)
         {
             r = float(rand() % RAND_MAX); // get a random integer
             v.push_back(r);               // push it to vector
