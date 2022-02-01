@@ -65,9 +65,9 @@ int main()
     cout << r3 << "\t" << r4 << "\t" << M[r3][r4] << endl;
 
     // now perform some funky matrix shuffling
-    for (i = 0; i < ORD; i++)
+    for (i = 1; i < ORD; i++)
     {
-        for (j = 0; j < ORD; j++)
+        for (j = 1; j < ORD; j++)
         {
             shuff_i = (float(ORD) / 2.0) * abs((cos(PI * float(i) / float(j)) + sin(PI * float(j) / float(i)))) - 1;
             shuff_j = (float(ORD) / 2.0) * abs((cos(PI * float(j) / float(i)) + sin(PI * float(i) / float(j)))) - 1;
