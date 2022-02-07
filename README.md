@@ -6,7 +6,7 @@ This workshop is offered by the [National Center for Supercomputing Applications
 Each exercise is comprised of a serial code (**/serial** folder), the OpenMP-parallelized version of it (**/solution** folder), and pseudo-code with comments/hints on how to parallelize it (**/hint#** folders). Makefiles are available for compilation with GCC. Exercises are implemented in C++ and Fortran, being identical except for the unavoidable syntax differences. In addition, there is always a **/yourwork** folder that you can use to play with the code and try out your directives. In that folder, you will find the base serial code to each exercise as a starting point (the same found in **/serial**).
 
 ## Getting a session on Expanse
-During the workshop, you will be editing files, compiling code and, most importantly, **running** things. We don't want to do this in the system's login nodes (the place where you arrive to after loging in through XSEDE's SSO Hub). We want to grab a chunk of a compute node. Follow the steps below.
+During the workshop, you will be editing files, compiling code and, most importantly, **running** things. We don't want to do this in the system's login nodes (the place where you arrive to after logging in through XSEDE's SSO Hub). We want to grab a chunk of a compute node. Follow the steps below.
 
 ### Log in
 1. Log in to XSEDE's SSO Hub from your local terminal:
