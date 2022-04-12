@@ -28,7 +28,7 @@ You are now sitting on a login node in Expanse.
 Copy and paste the following command on your terminal to get 16 cores on a **compute** node:
 
 ```
-srun --partition=shared --pty --account=nsa108 --nodes=1 --ntasks-per-node=1 --cpus-per-task=16 --mem=30G -t 02:00:00 --wait=0 --export=ALL /bin/bash
+srun --partition=shared --pty --account=nsa108 --nodes=1 --ntasks-per-node=32 --cpus-per-task=1 --mem=60G -t 02:00:00 --wait=0 --export=ALL /bin/bash
 ```
 
 
