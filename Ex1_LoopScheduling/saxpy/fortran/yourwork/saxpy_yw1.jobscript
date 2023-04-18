@@ -1,17 +1,17 @@
 #!/bin/bash
-#SBATCH --job-name="saxpy_yw2"
-#SBATCH --output="saxpy_yw2-%j.out"
+#SBATCH --job-name="saxpy_yw1"
+#SBATCH --output="saxpy_yw1-%j.out"
 #SBATCH --partition=trial
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=2
+#SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=5000M
 #SBATCH --account=RFST
 #SBATCH --export=ALL
 #SBATCH -t 00:05:00
 
-echo "Starting SAXPY with 2 OpenMP threads" 
-export OMP_NUM_THREADS=2
+echo "Starting SAXPY with 1 OpenMP threads" 
+export OMP_NUM_THREADS=1
 ./saxpy_yourwork.exe
 wait
 echo ""
