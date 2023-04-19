@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#define ORD 1 << 29 // size of arrays
+#define ORD 1 << 28 // size of arrays
 
 using namespace std;
 
