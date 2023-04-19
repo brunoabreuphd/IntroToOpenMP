@@ -2,7 +2,7 @@ program dotprod_yourwork
     use, intrinsic :: iso_fortran_env
     implicit none
     integer, parameter :: dp = REAL64   ! double precision
-    integer, parameter :: ORD = 2**29   ! arrays size
+    integer, parameter :: ORD = 2**28   ! arrays size
     real(dp), dimension(:), allocatable :: v1, v2   ! arrays
     real(dp) :: dotp    ! this will hold the dot product
     integer :: i        ! this will run loops over the arrays
