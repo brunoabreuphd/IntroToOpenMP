@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --job-name="ig_yw16"
+#SBATCH --output="ig_yw16-%j.out"
+#SBATCH --partition=trial
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem-per-cpu=5000M
+#SBATCH --account=RFST
+#SBATCH --export=ALL
+#SBATCH -t 00:05:00
+
+echo "Starting Index Game with 16 OpenMP threads" 
+export OMP_NUM_THREADS=16
+./indexgame_yourwork.exe
+wait
+echo ""
+
