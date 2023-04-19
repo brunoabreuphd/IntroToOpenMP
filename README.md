@@ -40,6 +40,17 @@ If you are working on this from a remote server, I recommend cloning the entire 
 
 ### Makefile
 The workspace has a **Makefile** that takes the source code, which is named *ExerciseName_yourwork.<cpp/f90>* and compiles it into an executable *ExerciseName_yourwork.exe* (you will also get an object file that can be ignored). This Makefile already includes the OpenMP flags for GCC.
+
+### Job scripts
+To run the compiled code, you need to submit it to the batch scheduler. In each folder, you will find one or several of them. For the **/yourwork** area, you can run your code using the scripts that follow the nomeclature `ExerciseName_ywN.jobscript`. Here, $N$ is the number of threads to be used. You can submit several scripts with different number of threads to test your solution. However, if you are ready to collect results, a job array script is avaliable. The `ExerciseName_yw_array_jobscript` file will test your solution with 1, 2, 4, 8, and 16 threads. You just need to submit that script once. To submit a script, use the `sbatch` command:
+```
+sbatch <scriptName>.jobscript
+```
+To check on the status of your run, you can use:
+```
+squeue -u $USER
+```
+
   
 
 ## Exercise 1 - Loop Scheduling
