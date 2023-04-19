@@ -11,16 +11,16 @@ During the workshop, you will be editing files, compiling code and, most importa
 ### Log in
 Log in to ICC from your local terminal:
 
-    ```
-    ssh -l <YourNetID> cc-login1.campuscluster.illinois.edu
-    ```
+```
+ssh -l <YourNetID> cc-login1.campuscluster.illinois.edu
+```
   
 You are now sitting on a login node in Expanse. 
   
 ### Clone this branch of the repository to get the exercise files
-    ```
-    git clone --branch uiuc-icc --single-branch https://github.com/babreu-ncsa/IntroToOpenMP
-    ```
+```
+git clone --branch uiuc-icc --single-branch https://github.com/babreu-ncsa/IntroToOpenMP
+```
 
 You should be ready to go now! If you know how to get around with *git*, you can alternatively fork this repo and clone it from your account.
 
@@ -43,13 +43,13 @@ The workspace has a **Makefile** that takes the source code, which is named *Exe
 
 ### Job scripts
 To run the compiled code, you need to submit it to the batch scheduler. In each folder, you will find one or several of them. For the **/yourwork** area, you can run your code using the scripts that follow the nomeclature `ExerciseName_ywN.jobscript`. Here, $N$ is the number of threads to be used. You can submit several scripts with different number of threads to test your solution. However, if you are ready to collect results, a job array script is avaliable. The `ExerciseName_yw_array_jobscript` file will test your solution with 1, 2, 4, 8, and 16 threads. You just need to submit that script once. To submit a script, use the `sbatch` command:
-    ```
-    sbatch <scriptName>.jobscript
-    ```
+```
+sbatch <scriptName>.jobscript
+```
 To check on the status of your run, you can use:
-    ```
-    squeue -u $USER
-    ```
+```
+squeue -u $USER
+```
 
   
 
