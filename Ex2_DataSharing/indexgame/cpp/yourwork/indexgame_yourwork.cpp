@@ -2,7 +2,7 @@
 #include <vector>
 #include <cmath>
 
-#define ORD 1 << 15          // size of array
+#define ORD 1 << 14          // size of array
 #define PI -4.0 * atan(-1.0) // pi ;D
 
 using namespace std;
