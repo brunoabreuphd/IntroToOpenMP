@@ -1,6 +1,6 @@
 # IntroToOpenMP
 
-### Exercises for Intro to Shared Memory Parallel Computing with OpenMP Workshop presented on 4/20/2023
+### Exercises for Intro to Shared Memory Parallel Computing with OpenMP Workshop
 
 This workshop is offered by the [National Center for Supercomputing Applications](https://www.ncsa.illinois.edu/).
 Each exercise is comprised of a serial code (**/serial** folder), the OpenMP-parallelized version of it (**/solution** folder), and pseudo-code with comments/hints on how to parallelize it (**/hint#** folders). Makefiles are available for compilation with GCC. Exercises are implemented in C++ and Fortran, being identical except for the unavoidable syntax differences. In addition, there is always a **/yourwork** folder that you can use to play with the code and try out your directives. In that folder, you will find the base serial code to each exercise as a starting point (the same found in **/serial**).
